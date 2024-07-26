@@ -40,7 +40,6 @@ class IpcProvider : ContentProvider() {
     }
 
     private val store by lazy { SharedStore(ctx) }
-    private val scope by lazy { CoroutineScope(Dispatchers.IO) }
     private val ctx by lazy {
         this.context ?: throw NullPointerException("Context must not be null")
     }

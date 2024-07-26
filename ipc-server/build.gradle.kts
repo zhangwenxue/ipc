@@ -57,7 +57,7 @@ mavenPublishing {
         )
     )
 
-    coordinates("io.github.zhangwenxue", "ipc-server", "1.0.0-alpha")
+    coordinates("io.github.zhangwenxue", "ipc-server", "1.0.0-alpha01")
 
     pom {
         name.set("Android-IPC-Server")

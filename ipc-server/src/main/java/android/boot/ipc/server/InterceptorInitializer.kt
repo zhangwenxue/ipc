@@ -15,7 +15,8 @@ object InterceptorInitializer {
         val providerInfo: ProviderInfo = context.packageManager
             .getProviderInfo(provider, PackageManager.GET_META_DATA)
         val metadata = providerInfo.metaData
-        //
+        if (metadata == null || metadata.isEmpty) return emptyList()
+
         val startup = "ipc-interceptor"
         val keys = metadata.keySet()
         keys.forEach {
