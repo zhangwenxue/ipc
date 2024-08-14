@@ -20,7 +20,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <intent-filter>
+                <action android:name="com.wwk.provider.ecg" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
+
         <provider
             android:name="android.boot.ipc.server.IpcProvider"
             android:authorities="${applicationId}.ipc-server"
@@ -28,9 +35,18 @@
             tools:ignore="ExportedContentProvider">
             <meta-data
                 android:name="ipc-interceptor"
-                android:value="android.boot.ipc.SNInterceptor"/>
+                android:value="android.boot.ipc.SNInterceptor" />
         </provider>
 
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.wwk.ecg.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
     </application>
 

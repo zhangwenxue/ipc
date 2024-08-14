@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
     <queries>
         <provider android:authorities="android.boot.ipc.ipc-server" />
+        <package android:name="android.boot.ipc" />
     </queries>
     <application
         android:allowBackup="true"
